@@ -7,7 +7,7 @@ function a(){
     b(name);
 }
 
-function b(){
+function b(name){  //no estaba recibiendo el argumentos
     console.log(name)
 }
 

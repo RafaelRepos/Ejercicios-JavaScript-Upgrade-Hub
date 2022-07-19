@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.fn-div-father {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fn-div-contenedor {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  max-height: auto;
+  margin: 20px;
+  justify-content: center;
+}
+
+.fn-imagen-personaje {
+  margin: 10px;
+  max-width: 300px;
+}/*# sourceMappingURL=ex1.css.map */

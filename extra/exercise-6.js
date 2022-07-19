@@ -5,8 +5,8 @@
 const user = {name: "Abel", surname: "Cabeza"}
 
 function a(user){
-    const nama = b(user.nama);
-    console.log(nama)
+    const name = b(user.name);
+    console.log(name)
 }
 
 function b(name){

@@ -6,3 +6,14 @@ const list = [
     {name: "Z balvin", gender: "reggeaton", order: 4},
     {name: "Neng de castefa", gender: "pop", order: 1}
 ]
+
+list.sort( (a, b) => {
+    if (a.order == b.order) {
+        return 0;
+    }
+    if (a.order < b.order) {
+        return -1;
+    }
+    return 1;
+} )
+console.log(list)

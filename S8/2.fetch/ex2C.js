@@ -21,9 +21,6 @@ button$$.addEventListener("click",hacerFetch);
   function crearP(data) {
         let p$$ = document.createElement('p')
         document.body.appendChild(p$$);
-
-  
-
       
         let buttomX$$ = document.querySelector('button')
         buttomX$$.addEventListener("click",borrarP);
