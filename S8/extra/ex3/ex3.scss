@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.fn-div-listado {
+    margin:  10px;
+}
+.fn-div-producto {
+    margin: 30px;
+    justify-content: space-around;
+
+}
+.fn-button-borrar , .fn-button-ver {
+    max-width: 30%;
+    max-height: 30px;
+    margin: 20px 10px;
+    color: white;
+    background-color: rgb(90, 56, 56);
+    border-style: none;
+    border-radius: 5px;
+    font-weight: 700;    
+}
+.fn-div-consulta {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 30px; 
+}
+.fn-div-respuesta {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 30px;
+    
+}

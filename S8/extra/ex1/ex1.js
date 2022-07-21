@@ -15,29 +15,26 @@ fetch('https://breakingbadapi.com/api/characters')
       let divFather$$ = document.createElement('div');
       document.body.appendChild(divFather$$);
       divFather$$.classList.add("fn-div-father");
+
       for (let index = 0; index < personajes.length; index++) {
-            let div$ = document.createElement('div');
-            div$.classList.add("fn-div-contenedor");
-            let h4$ = document.createElement('h4');
+        let div$ = document.createElement('div');
+        div$.classList.add("fn-div-contenedor");
+            
+    let texto = `<h4 class="fn-titulo-nombre">${personajes[index].name}</h4>
+    <img class="fn-imagen-personaje" src="${personajes[index].img}">`;
+    div$.innerHTML = texto;
+    divFather$$.appendChild(div$);
+            
+            /*let h4$ = document.createElement('h4');
             h4$.classList.add("fn-titulo-nombre");
             let img$ = document.createElement('img');
-            img$.classList.add("fn-imagen-personaje");
+            img$.classList.add("fn-imagen-personaje");            
             img$.setAttribute("src",personajes[index].img);
-            divFather$$.appendChild(div$);
             div$.appendChild(h4$);
             div$.appendChild(img$);
-            h4$.textContent = personajes[index].name;
+            h4$.textContent = personajes[index].name;*/
     }
-
-    //   let div$$ = document.createElement('div');
-    //   let h1$$ = document.createElement('p');
-    //   let img$$ = document.createElement('img');
-    //   divFather$$.appendChild(div$$)
-    //   div$$.appendChild(h1$$);
-    //   div$$.appendChild(img$$);
-    //   img$$.setAttribute("src",)
-  }
-
+}
 //___________________________________________________________________________________
 /*for (let index = 0; index < personajes.length; index++) {
     let div$ = document.createElement('div');

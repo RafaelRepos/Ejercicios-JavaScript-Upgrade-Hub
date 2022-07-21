@@ -17,12 +17,8 @@ function father(description, callback){
     userAnwsers.push(callback(description))
 }
 father("hola",promptExample);
-father("acceso confirmado",confirmExample);
-father("hola",promptExample);
-father("hola",promptExample);
-father("hola",promptExample);
-father("hola",promptExample);
-father("texto de prueba", confirmExample);
+father("texto de prueba",confirmExample);
+
 
 // userAnwsers.push(father);
 

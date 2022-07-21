@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.fn-div-elementos {
+  margin: 50px 20px;
+}
+
+.fn-hTresTexto, .fn-hCincoText, .fn-pTexto {
+  margin: 10px 0px;
+}/*# sourceMappingURL=ex2.css.map */

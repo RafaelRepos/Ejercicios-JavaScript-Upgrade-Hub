@@ -3,7 +3,6 @@
 let button$$ = document.querySelector('button');
 button$$.addEventListener("click",hacerFetch);
 
-
   function hacerFetch(){
 
     let input$$ = document.querySelector('input')
@@ -14,19 +13,21 @@ button$$.addEventListener("click",hacerFetch);
     })
     .then(function(data) {
     crearP(data);
-    borrarP(data);
+    //borrarP(data);
     });
   }
 
   function crearP(data) {
         let p$$ = document.createElement('p')
         document.body.appendChild(p$$);
-      
-        let buttomX$$ = document.querySelector('button')
-        buttomX$$.addEventListener("click",borrarP);
-        p$$.remove();
-    }
+        p$$.textContent= `El nombre ${data.name} tiene un ${data.country[0].probability*100} porciento de ser de ${data.country[0].country_id} y un ${data.country[1].probability*100} de ser de ${data.country[1].country_id}`;
+
+        let buttonXX = document.createElement('button')
+        buttonXX.innerHTML = 'Borrar';
+        p$$.appendChild(buttonXX);
+        buttonXX.addEventListener("click", () => (p$$.remove()));
   
-  function borrarP() {
-    p$$.textContent= `El nombre ${data.name} tiene un ${data.country[0].probability*100} porciento de ser de ${data.country[0].country_id} y un ${data.country[1].probability*100} de ser de ${data.country[1].country_id}`;
-  }
+}
+    
+  
+  
