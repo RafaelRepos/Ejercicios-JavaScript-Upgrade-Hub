@@ -27,19 +27,13 @@ const users = [
                                         }
     },
 ]
-let soundsBox = {};
-let acumuladorVolumen=0;
-
-for (let user of users) {
-    for (let sounds in user.favoritesSounds) {
-        for (let volumenDeCadaSonido in sounds.volume) {
-        console.log(acumuladorVolumen)
-            
-        }
-
+let sumatoriaVolumen = 0;
+let element = 0;
+let cantidadVols = 0;
+for (const user of users) {
+    for (const key in user.favoritesSounds) {            
+        element = user.favoritesSounds[key].volume;
+        sumatoriaVolumen += element ;            
     }
 }
-
-// for (const cadaSonido in soundsBox.volume) {
-
-// }
+console.log("La media total del volumen de todos los sonidos es: "+sumatoriaVolumen/element);

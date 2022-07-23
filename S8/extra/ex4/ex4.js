@@ -25,33 +25,34 @@ fetch('http://localhost:3000/planets')
         imgPlanet$.classList.add('fn-img-planets');
         imgPlanet$.setAttribute("src",planets[index].image);
         imgPlanet$.setAttribute("width",300);
-        divPlanets$.appendChild(imgPlanet$);   
-        
-        
-        
+        divPlanets$.appendChild(imgPlanet$);           
     }
-} 
-divPlanets$.addEventListener('click', function () {
-    fetch('http://localhost:3000/characters?idPlanet=')
-    .then(function (res) {
-        return res.json();
+    divPlanets$.addEventListener('click',  () => {
+        
+        fetch('http://localhost:3000/characters')
+        .then(function (res) {
+            return res.json()})
+        .then(function(characters) {
+            showCharacters(characters)});
+
+        function showCharacters(characters) {
+            divCharacters$.innerHTML = "";
+            
+        for (let character of characters) {
+            let imgCaras$ = document.createElement("img");
+            imgCaras$.classList.add("fn-imgCaras");
+            imgCaras$.setAttribute.add("src", character.avatar)
+            divCharacters$.appendChild(imgCaras$);
+            // let imgPlanet$ = document.createElement('img')
+            // imgPlanet$.classList.add('fn-img-planets');
+            // imgPlanet$.setAttribute("src",planets[index].image);
+            // imgPlanet$.setAttribute("width",300);
+            // divPlanets$.appendChild(imgPlanet$);                
+            }
+        }
     })
-    .then(function(idPlanet) {
-        showCharacters(idPlanet);
-    });
-    for (let index = 0; index < idPlanets.length; index++) {
-        
-        let imgCaras$ = document.createElement("img");
-        imgCaras$.classList.add("fn-imgCaras");
-        imgCaras$.setAttribute.add("src",idPlanet[index].avatar)
-        divCharacters$.appendChild(imgCaras$);
-        // let imgPlanet$ = document.createElement('img')
-        // imgPlanet$.classList.add('fn-img-planets');
-        // imgPlanet$.setAttribute("src",planets[index].image);
-        // imgPlanet$.setAttribute("width",300);
-        // divPlanets$.appendChild(imgPlanet$);                
-    }
-})
+} 
+
 
 
 //__________________________________________________________________________________

@@ -31,5 +31,27 @@ const users = [
                                             }
     },
 ]
+let element = [];
+for (const user of users) {
+    let favoritos = user.favoritesSounds;
+    for (const key in favoritos) {
+            element.push(key);
+        }
+}
+console.log(element);
 
-
+for (let index = 0; index < element.length; index++) {
+    const nuevoElement = element[index];
+    if (element) {
+        
+    }
+}
+conteo = {};
+for (const iterator of element) {
+    if (conteo[iterator]) {
+        conteo[iterator] += 1;        
+    } else {
+        conteo[iterator] = 1;
+    }
+}
+console.log(conteo);

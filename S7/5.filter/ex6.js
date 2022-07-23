@@ -19,7 +19,7 @@ console.log(masterA);
 const master = streamers.filter(function (player) {
   
     if (player.age > 35)  {
-        return player.gameMorePlayed.toLowerCase();  //No me lo pasa a Mayus Profeeee  
+        return player.gameMorePlayed.toUpperCase();  //No me lo pasa a Mayus Profeeee  
     }   
 
 });

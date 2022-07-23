@@ -8,8 +8,6 @@ const countries = [
     {title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'},
 ];
 
-
-
 for (let index = 0; index < countries.length; index++) {
     let div$ = document.createElement('div');
     document.body.appendChild(div$);

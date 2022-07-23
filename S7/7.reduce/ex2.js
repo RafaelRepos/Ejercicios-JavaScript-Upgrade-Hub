@@ -13,19 +13,17 @@ const exams = [
     {name: 'Robert Kiyosaki', score: 2},
     {name: 'Keanu Reeves', score: 10}
 ];
-
 var aprobados = exams.reduce(function (accumulator,alumn) { 
-    
-    if (alumn.score >= 5) {
-        
+   
+    if (alumn.score >= 5) {        
         return accumulator + alumn.score;
     } else {
         return accumulator;
     }
-
 }, 0);
 
 console.log(aprobados);
+
 // var mostExpPilot = pilots.reduce(function (oldest, pilot) { 
 // return (oldest.years || 0) > pilot.years ? oldest : pilot;}, {});
 
