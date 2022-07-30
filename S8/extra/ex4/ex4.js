@@ -1,10 +1,5 @@
-// Vamos a usar de nuevo JSON SERVER para crear un listado de personajes de la serie Dragon Ball.
-
-// Para ello, ejecutemos ``json-server --watch exercise-4.json``. En este caso el endpoint con los personajes es `http://localhost:3000/characters`.
-
-// La idea es crear una galería con los planetas, que podemos obtener del endpoint `http://localhost:3000/planets` y, que si el usuario hace click en alguno de los planetas, salga debajo los personajes que están asociados por el .idPlanet a ese planeta en cuestión, mostrando tanto sus imágenes .avatar como sus nombres .name. Para poder obtener la información de los personajes podemos hacer un filtro de los personajes llamando a la url, por ejemplo ``http://localhost:3000/characters?idPlanet=1`` y, teniendo en cuenta que el idPlanet variará dependiendo del planeta seleccionado.
- 
-// Además de esto, agrega un buscador para poder filtrar los personajes una vez que has seleccionado el planeta. Por lo tanto, deberemos incluir el input debajo del planeta y encima de los personajes listados.
+let divPlanets$ = document.querySelector('[data-function="planets"]');
+let divCharacters$ = document.querySelector('[data-function="characters"]');
 
 fetch('http://localhost:3000/planets')
   .then(function (res) {
@@ -14,46 +9,61 @@ fetch('http://localhost:3000/planets')
       showPlanets(planets);
   });
 
-  function showPlanets(planets) {
-      let divPlanets$ = document.querySelector('[data-function="planets"]');
-      let divSearch$ = document.querySelector('[data-function="search"]');
-      let divCharacters$ = document.querySelector('[data-function="characters"]');
+  function showPlanets(planets) {//________________________________      
 
       for (let index = 0; index < planets.length; index++) {
-            
-        let imgPlanet$ = document.createElement('img')
-        imgPlanet$.classList.add('fn-img-planets');
-        imgPlanet$.setAttribute("src",planets[index].image);
-        imgPlanet$.setAttribute("width",300);
-        divPlanets$.appendChild(imgPlanet$);           
-    }
-    divPlanets$.addEventListener('click',  () => {
-        
-        fetch('http://localhost:3000/characters')
-        .then(function (res) {
-            return res.json()})
-        .then(function(characters) {
-            showCharacters(characters)});
+        let planet = planets[index];
+        let divPlanet = document.createElement('div')
+        divPlanet.innerHTML =`<h3>${planet.name}</h3><img src="${planet.image}" width="300"></img>`;
+        divPlanets$.appendChild(divPlanet);            
 
-        function showCharacters(characters) {
-            divCharacters$.innerHTML = "";
-            
-        for (let character of characters) {
-            let imgCaras$ = document.createElement("img");
-            imgCaras$.classList.add("fn-imgCaras");
-            imgCaras$.setAttribute.add("src", character.avatar)
-            divCharacters$.appendChild(imgCaras$);
-            // let imgPlanet$ = document.createElement('img')
-            // imgPlanet$.classList.add('fn-img-planets');
-            // imgPlanet$.setAttribute("src",planets[index].image);
-            // imgPlanet$.setAttribute("width",300);
-            // divPlanets$.appendChild(imgPlanet$);                
+        divPlanet.addEventListener('click', () => showCharacters(planet.id));                      
+    }       
+}//_______________________________________________________
+let divPersonaje$ = document.createElement('div')
+function showCharacters(id) {
+    
+    divCharacters$.innerHTML = "";
+        fetch('http://localhost:3000/characters?idPlanet='+id)
+        .then(function (res) {
+        return res.json()
+        })
+        .then(function(characters) {      
+            for (let index = 0; index < characters.length; index++) {
+            const character = characters[index];
+            let divPersonaje$ = document.createElement('div')
+            divPersonaje$.innerHTML = `<h3>${character.name}</h3><img src="${character.avatar}" width="100"></img>`;
+            divCharacters$.appendChild(divPersonaje$); 
+            } 
+        })    
+    } 
+function personajeFiltrado(valorInput) {
+    divCharacters$.innerHTML = "";
+    fetch('http://localhost:3000/characters/')
+    .then((res) => res.json())
+    .then((respuesta) => {
+        for (const personaje of respuesta) {
+            if (personaje.name.toLowerCase() === valorInput.toLowerCase()) {
+                let divMostrandoPersonaje = document.createElement('div')
+                divMostrandoPersonaje.innerHTML=`<img src="${personaje.avatar}"></img><h3>${personaje.name}</h3>`;
+                divCharacters$.appendChild(divMostrandoPersonaje);
             }
+
         }
     })
-} 
+}
 
+let divSearch$ = document.querySelector('[data-function="search"]');
+function search() {
+    let input$ = document.createElement('input')
+    let button$ = document.createElement('button');
+    button$.innerHTML = `Filtrar Personaje`;
+    divSearch$.appendChild(input$);
+    divSearch$.appendChild(button$);
+    button$.addEventListener('click', () => personajeFiltrado(input$.value))
+}
 
+search();
 
 //__________________________________________________________________________________
 /*fetch('https://breakingbadapi.com/api/characters')

@@ -9,16 +9,16 @@ const streamers =
     {name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'}, 
     {name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
 ];
+let input$$ = document.querySelector('[data-function="toFilterStreamers"]');
 
+function buscarCoincidencia(eventoInput) {    
+    let buscarEnStreamer = streamers.filter(function(streamer){        
+    return streamer.name.toLowerCase().includes(input$$.value.toLowerCase())    
+    })
+    console.log(buscarEnStreamer);
+}
 
-
-
-
-
-
-
-
-
+input$$.addEventListener('input', buscarCoincidencia);
 
 //______________________________________________________________________________________________________
 /*Dado el siguiente array, utiliza .filter() para generar un nuevo array con los streamers que incluyan el caracter 'Legends' en su propiedad .gameMorePlayed. Recomendamos usar la funcion .includes() para la comprobación.

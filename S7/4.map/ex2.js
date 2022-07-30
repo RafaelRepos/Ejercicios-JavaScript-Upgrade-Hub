@@ -10,7 +10,7 @@ const usersName =  users.map(function (user) {
     if (user.name[0] === 'A') {
         user.name = 'Anacleto'
     }    
-     return user
+     return user.id
 });   
 
 console.log(usersName);

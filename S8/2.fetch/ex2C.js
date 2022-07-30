@@ -13,7 +13,7 @@ button$$.addEventListener("click",hacerFetch);
     })
     .then(function(data) {
     crearP(data);
-    //borrarP(data);
+    
     });
   }
 

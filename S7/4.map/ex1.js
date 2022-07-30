@@ -6,7 +6,7 @@ const users = [{id: 1, name: 'Abel'}, {id:2, name: 'Julia'},{id:3, name: 'Pedro'
 
 const usersName = users.map(function (names) {return names.name});
 
-console.log(usersName);
+console.log(usersName);//[ 'Abel', 'Julia', 'Pedro', 'Amanda' ]
 
 
 

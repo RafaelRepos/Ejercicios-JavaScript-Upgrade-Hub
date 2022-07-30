@@ -10,7 +10,7 @@ p$.textContent = 'Voy en Medio!';
 
 document.body.insertBefore(p$, div2$);
 
-console.log(document.body)
+console.log(document.body);
 
 
 

@@ -7,3 +7,8 @@ const game = {title: 'The last us 2', gender: ['action', 'zombie', 'survival'], 
 const { title: titleChanged, gender: newGender, year: yearAge} = game ;
 
 console.log(newGender);
+console.log(titleChanged);
+console.log(yearAge);
+
+// const [peli1, peli2, peli3] = newGender;
+// console.log(peli3);

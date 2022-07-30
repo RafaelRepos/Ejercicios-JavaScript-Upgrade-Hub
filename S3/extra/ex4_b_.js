@@ -7,11 +7,17 @@ const countries = [
     {title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'},
 ];
 
+let buttonLastDelet = document.createElement('button')
+document.body.appendChild(buttonLastDelet);
+buttonLastDelet.textContent = "Eliminar elúltimo de la lista";
+
+let divFather$ = document.createElement('div');
+document.body.appendChild(divFather$);
 
 
 for (let index = 0; index < countries.length; index++) {
     let div$ = document.createElement('div');
-    document.body.appendChild(div$);
+    divFather$.appendChild(div$);
     let h4$ = document.createElement('h4');
     div$.appendChild(h4$);
     h4$.textContent = countries[index].title;
@@ -20,12 +26,4 @@ for (let index = 0; index < countries.length; index++) {
     img$.setAttribute("src",countries[index].imgUrl);    
 }
 
-
-let buttom$$ = document.querySelector('buttom');
-
-function lastDelete(event) {
-    const totalDiv$ = document.querySelectorAll('div');
-    totalDiv$[totalDiv$.length-1].remove();
-}
-buttom$$.addEventListener('click',lastDelete);
-
+buttonLastDelet.addEventListener('click', () => (divFather$.lastElementChild.remove()));

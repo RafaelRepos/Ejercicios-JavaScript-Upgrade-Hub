@@ -10,7 +10,7 @@ let divContent = document.querySelector('[data-function="gameboard"]');
 let buttonStarG = document.querySelector('[data-function="start-game"]');
 let buttonCheckG = document.querySelector('[data-function="check-game"]');
 let allAnswers = [];
-let correctAnwers;
+let correctAnwers = [];
 let contadorAciertos = 0;
 
 fetch (endPoint)
@@ -21,38 +21,25 @@ fetch (endPoint)
     print(data);        
 });
 
-for (const answer of allAnswers) {
-    if (answer) {
-        
-    }
-}
 
-
-
+//_____________________________________________
 function print(data) {
-    console.log(data);
+    
     for (const result of data.results) {
-        console.log(result)
-        let h3Ques$ = document.createElement('h3')
+;        let h3Ques$ = document.createElement('h3')
         divContent.appendChild(h3Ques$);
-        let pAns$ = document.createElement('p');
-        divContent.appendChild(pAns$);
+        let pAns$ = document.createElement('p');        
+        divContent.appendChild(pAns$);        
         h3Ques$.innerHTML = result.question;
         for (const incorrect of result.incorrect_answers) {
-            //console.log(incorrect);
             let pAnsInc$ = document.createElement('p');
             divContent.appendChild(pAnsInc$);
-            pAnsInc$.innerHTML = incorrect;
-            divContent.appendChild(pAns$);
-            allAnswers.push(incorrect);
+            pAnsInc$.innerHTML = incorrect;            
         }
-        //console.log(result.correct_answer);
-        correctAnwers = result.correct_answer;
-        pAns$.innerHTML = correctAnwers;
-        allAnswers.push(result.correct_answer);        
-        
-        console.log(allAnswers);
+        pAns$.innerHTML = result.correct_answer;     
+        correctAnwers.push(result.correct_answer);
     }
 }
+
 
 

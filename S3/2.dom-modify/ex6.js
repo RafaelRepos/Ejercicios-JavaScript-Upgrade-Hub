@@ -9,7 +9,6 @@ for (let index = 0; index < apps.length; index++) {
     const li$ = document.createElement('li');
     ul$.appendChild(li$);
     li$.innerHTML = apps[index];
-
 }
 console.log(ul$);
 

@@ -14,3 +14,6 @@ img{
     height: 380px;
     max-width: 100%;
 }
+.divGeneral {
+    display: flex;
+}

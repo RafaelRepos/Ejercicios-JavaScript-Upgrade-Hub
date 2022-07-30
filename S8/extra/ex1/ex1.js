@@ -23,16 +23,8 @@ fetch('https://breakingbadapi.com/api/characters')
     let texto = `<h4 class="fn-titulo-nombre">${personajes[index].name}</h4>
     <img class="fn-imagen-personaje" src="${personajes[index].img}">`;
     div$.innerHTML = texto;
-    divFather$$.appendChild(div$);
-            
-            /*let h4$ = document.createElement('h4');
-            h4$.classList.add("fn-titulo-nombre");
-            let img$ = document.createElement('img');
-            img$.classList.add("fn-imagen-personaje");            
-            img$.setAttribute("src",personajes[index].img);
-            div$.appendChild(h4$);
-            div$.appendChild(img$);
-            h4$.textContent = personajes[index].name;*/
+    divFather$$.appendChild(div$);            
+ 
     }
 }
 //___________________________________________________________________________________

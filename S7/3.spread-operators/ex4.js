@@ -7,4 +7,3 @@ const toyUpdate = {lights: 'rgb', power: ['Volar like a dragon', 'MoonWalk']}
 const newObject = {...toy, ...toyUpdate};
 
 console.log(newObject);
-

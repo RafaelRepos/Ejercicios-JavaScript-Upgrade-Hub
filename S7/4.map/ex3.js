@@ -10,7 +10,7 @@ const namesCities = cities.map(function(cityVisited) {
         cityVisited.name = cityVisited.name + visit;
              
     }
-    return cityVisited
+    return cityVisited.name
 });
 
 console.log(namesCities);
@@ -27,6 +27,12 @@ const usersName =  users.map(function (user) {
 });   
 
 console.log(usersName);
+[
+  { id: 1, name: 'Anacleto' },
+  { id: 2, name: 'Julia' },
+  { id: 3, name: 'Pedro' },
+  { id: 4, name: 'Anacleto' }
+]
 */
 //_______________________________________________________________________________________________________________________________________
 /*  EJERCICIO 1
